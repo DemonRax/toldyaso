@@ -1,0 +1,11 @@
+[ignore]
+.*/.cache/.*
+
+[include]
+
+[libs]
+flow-typed/
+
+[lints]
+
+[options]

@@ -1,0 +1,73 @@
+{
+  "name": "toldyaso_ui",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "bootstrap": "3",
+    "bootstrap-sass": "^3.3.7",
+    "chalk": "^2.3.2",
+    "immutable": "^4.0.0-rc.9",
+    "moment": "^2.22.2",
+    "node-sass-chokidar": "^1.2.2",
+    "react": "^16.2.0",
+    "react-bootstrap": "^0.32.1",
+    "react-dom": "^16.2.0",
+    "react-redux": "^5.0.7",
+    "react-router": "^4.2.0",
+    "react-router-dom": "^4.2.2",
+    "react-scripts": "1.1.1",
+    "react-select": "^1.2.1",
+    "redux": "^3.7.2",
+    "redux-devtools-extension": "^2.13.2",
+    "redux-thunk": "^2.2.0"
+  },
+  "devDependencies": {
+    "enzyme": "^3.3.0",
+    "enzyme-adapter-react-16": "^1.1.1",
+    "enzyme-to-json": "^3.3.3",
+    "eslint-config-prettier": "^2.9.0",
+    "eslint-plugin-flowtype": "^2.46.3",
+    "eslint-plugin-prettier": "^2.6.0",
+    "flow-bin": "^0.69.0",
+    "flow-typed": "^2.4.0",
+    "jest": "^22.4.3",
+    "jest-enzyme": "^6.0.0",
+    "npm-run-all": "^4.1.2",
+    "prettier": "^1.11.1",
+    "react-test-renderer": "^16.2.0"
+  },
+  "scripts": {
+    "start-js": "PORT=4747 react-scripts start",
+    "start": "npm-run-all -p watch-css start-js",
+    "build": "yarn build-css && react-scripts build",
+    "test-build": "yarn eslint && yarn flow && yarn test && yarn build",
+    "test-dev": "yarn prettify && yarn eslint && yarn flow && yarn test",
+    "prettify": "node_modules/prettier/bin-prettier.js --config ./.prettier.rc src/**/*.js src/__tests__/**/*.js --write",
+    "eslint": "node_modules/eslint/bin/eslint.js ./src/",
+    "test": "react-scripts test --env=jsdom --coverage",
+    "watch": "react-scripts test --env=jsdom --watch --coverage",
+    "eject": "react-scripts eject",
+    "flow": "flow",
+    "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
+    "watch-css": "yarn build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive"
+  },
+  "jest": {
+    "coverageThreshold": {
+      "global": {
+        "branches": 100,
+        "functions": 100,
+        "lines": 100,
+        "statements": 100
+      }
+    },
+    "coverageReporters": [
+      "text",
+      "lcov",
+      "cobertura"
+    ]
+  },
+  "homepage": "/",
+  "snapshotSerializers": [
+    "enzyme-to-json/serializer"
+  ]
+}
