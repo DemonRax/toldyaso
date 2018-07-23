@@ -37,7 +37,7 @@
     "react-test-renderer": "^16.2.0"
   },
   "scripts": {
-    "start-js": "PORT=4747 react-scripts start",
+    "start-js": "PORT=4702 react-scripts start",
     "start": "npm-run-all -p watch-css start-js",
     "build": "yarn build-css && react-scripts build",
     "test-build": "yarn eslint && yarn flow && yarn test && yarn build",

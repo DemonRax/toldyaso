@@ -1,9 +1,9 @@
 // @flow
-import { combineReducers } from "redux";
-import { someReducer } from '../reducers/SomeReducer'
+import { combineReducers } from 'redux';
+import { listReducer } from './ListReducer';
 
-export type State = {   some: any };
+export type AppState = { some: any };
 
 export const rootReducer = combineReducers({
-    some: someReducer
+    list: listReducer
 });
